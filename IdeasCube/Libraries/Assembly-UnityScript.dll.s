@@ -413,11 +413,7 @@ mono_image_table:
 
 	.long 3
 	.asciz "Assembly-UnityScript"
-<<<<<<< HEAD
-	.asciz "9EDB5947-9031-4D2B-917F-CF1973075A60"
-=======
-	.asciz "9E17D063-94A0-4E03-9416-D1559AE249D9"
->>>>>>> cube_background_branch
+	.asciz "56B405C0-4497-4C50-B8BA-F14A75F6E287"
 	.asciz ""
 	.asciz ""
 	.align 3
@@ -456,11 +452,7 @@ mono_aot_file_info:
 .text
 	.align 2
 mono_assembly_guid:
-<<<<<<< HEAD
-	.asciz "9EDB5947-9031-4D2B-917F-CF1973075A60"
-=======
-	.asciz "9E17D063-94A0-4E03-9416-D1559AE249D9"
->>>>>>> cube_background_branch
+	.asciz "56B405C0-4497-4C50-B8BA-F14A75F6E287"
 .text
 	.align 2
 mono_aot_version:
