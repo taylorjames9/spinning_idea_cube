@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/spin_cube_mouseDrag.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/spin_cube_mouseDrag.js">
     <Files>
-      <File FileName="Assets/spin_cube_mouseDrag.js" Line="2" Column="1" />
+      <File FileName="Assets/Scripts/spin_cube_mouseDrag.js" Line="16" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
