@@ -8,10 +8,8 @@ var plus_z : Transform;
 
 var snapSpeed = 1.0;
 
-
 var qrotation : Quaternion;
 var qRotationFrom : Quaternion;
-
 var rotationSpeed = 1.0;
 var lerpSpeed = 1.0;
  
@@ -27,6 +25,11 @@ function OnMouseDown()
  
 function Update () 
 {
+ 
+print("transform.eulerAngles.x  = " + transform.eulerAngles.x);
+print("transform.eulerAngles.y = " + transform.eulerAngles.y);
+print("transform.eulerAngles.z = " + transform.eulerAngles.z);
+ 
  
     if (Input.GetMouseButton(0) && dragging) {
         speed = new Vector3(-Input.GetAxis ("Mouse X"), Input.GetAxis("Mouse Y"), 0);
@@ -50,21 +53,18 @@ SnapTo();
 
 function SnapTo()
 {
-	if(dragging == false){
- 		if(transform.rotation.y < 45 && transform.rotation.y > 315 && transform.rotation.z < 45 && transform.rotation.z > 315){
- 			qrotation = Quaternion.LookRotation(plus_x.position);
- 			qRotationFrom = Quaternion.LookRotation(transform.position);
- 			 transform.rotation = Quaternion.Lerp(qRotationFrom, qrotation, Time.deltaTime * snapSpeed);
- 			 print("We should be snapping to plus_x object");
- 
+	if(dragging == false)
+	{
+ 		/*if(transform.eulerAngles.x < 45 /*|| transform.eulerAngles.x < 45) && (transform.eulerAngles.y < 45 || transform.eulerAngles.y > 315) && (transform.eulerAngles.z < 45 || transform.eulerAngles.z > 315)){
+ 			 transform.LookAt(plus_x.position);
+ 			 print("we should be getting plus x snapping");
+        }*/
+        if(transform.eulerAngles.z > 45 && transform.eulerAngles.z < 135/*|| transform.eulerAngles.y > 135 && transform.eulerAngles.y < 225  && transform.eulerAngles.y > 135 && transform.eulerAngles.z < 225 && transform.eulerAngles.z > 135*/){
+ 			 //transform.LookAt(neg_y.position);
+ 			  transform.eulerAngles = Vector3(0, 0, -90);
+ 			  print("we should be getting above y snapping");
         }
-        if(transform.rotation.y < 225  && transform.rotation.y > 135 && transform.rotation.z < 225 && transform.rotation.z > 135){
- 			qrotation = Quaternion.LookRotation(neg_x.position);
- 			qRotationFrom = Quaternion.LookRotation(transform.position);
- 			transform.rotation = Quaternion.Lerp(qRotationFrom, qrotation, Time.deltaTime * snapSpeed);
-        	 print("We should be snapping to neg_x object");
-        }
-}
+	}
 }
 
 /*

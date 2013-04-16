@@ -13,7 +13,9 @@ extern "C"
 	void				mono_aot_register_module(gpointer *aot_info);
 	extern gboolean		mono_aot_only;
 	extern gpointer*	mono_aot_module_Assembly_UnityScript_info; // Assembly-UnityScript.dll
+	extern gpointer*	mono_aot_module_Boo_Lang_info; // Boo.Lang.dll
 	extern gpointer*	mono_aot_module_Mono_Security_info; // Mono.Security.dll
+	extern gpointer*	mono_aot_module_System_Core_info; // System.Core.dll
 	extern gpointer*	mono_aot_module_System_info; // System.dll
 	extern gpointer*	mono_aot_module_UnityEngine_info; // UnityEngine.dll
 	extern gpointer*	mono_aot_module_mscorlib_info; // mscorlib.dll
@@ -26,7 +28,9 @@ void RegisterMonoModules()
 	mono_aot_only = true;
 	mono_ficall_flag = false;
 	mono_aot_register_module(mono_aot_module_Assembly_UnityScript_info);
+	mono_aot_register_module(mono_aot_module_Boo_Lang_info);
 	mono_aot_register_module(mono_aot_module_Mono_Security_info);
+	mono_aot_register_module(mono_aot_module_System_Core_info);
 	mono_aot_register_module(mono_aot_module_System_info);
 	mono_aot_register_module(mono_aot_module_UnityEngine_info);
 	mono_aot_register_module(mono_aot_module_mscorlib_info);
