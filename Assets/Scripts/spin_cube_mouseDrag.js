@@ -22,7 +22,7 @@ function Update ()
         avgSpeed = Vector3.Lerp(avgSpeed,speed,Time.deltaTime);
     } else {
         if (dragging) {
-            speed = avgSpeed;
+            speed = Vector3(0,0,0);
             dragging = false;
         }
         var i = Time.deltaTime/2 * lerpSpeed;
