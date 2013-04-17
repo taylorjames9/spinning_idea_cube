@@ -59,10 +59,25 @@ function SnapTo()
  			 transform.LookAt(plus_x.position);
  			 print("we should be getting plus x snapping");
         }*/
-        if(transform.eulerAngles.z > 45 && transform.eulerAngles.z < 135/*|| transform.eulerAngles.y > 135 && transform.eulerAngles.y < 225  && transform.eulerAngles.y > 135 && transform.eulerAngles.z < 225 && transform.eulerAngles.z > 135*/){
+        if(transform.eulerAngles.z < 325 && transform.eulerAngles.z > 280/*|| transform.eulerAngles.y > 135 && transform.eulerAngles.y < 225  && transform.eulerAngles.y > 135 && transform.eulerAngles.z < 225 && transform.eulerAngles.z > 135*/){
  			 //transform.LookAt(neg_y.position);
  			  transform.eulerAngles = Vector3(0, 0, -90);
  			  print("we should be getting above y snapping");
+        }
+        if(transform.eulerAngles.z > 45 && transform.eulerAngles.z < 90/*|| transform.eulerAngles.y > 135 && transform.eulerAngles.y < 225  && transform.eulerAngles.y > 135 && transform.eulerAngles.z < 225 && transform.eulerAngles.z > 135*/){
+ 			 //transform.LookAt(neg_y.position);
+ 			  transform.eulerAngles = Vector3(0, 0, 90);
+ 			  print("we should be getting above y snapping");
+        }
+        if(transform.eulerAngles.z > 315 && transform.eulerAngles.z < 360/*|| transform.eulerAngles.y > 135 && transform.eulerAngles.y < 225  && transform.eulerAngles.y > 135 && transform.eulerAngles.z < 225 && transform.eulerAngles.z > 135*/){
+ 			 //transform.LookAt(neg_y.position);
+ 			  transform.eulerAngles = Vector3(0, 0, 0);
+ 			  print("we should be getting above ceo");
+ 	    }
+ 	    if(transform.eulerAngles.z < 45 || transform.eulerAngles.z > 315/*|| transform.eulerAngles.y > 135 && transform.eulerAngles.y < 225  && transform.eulerAngles.y > 135 && transform.eulerAngles.z < 225 && transform.eulerAngles.z > 135*/){
+ 			 //transform.LookAt(neg_y.position);
+ 			  transform.eulerAngles = Vector3(0, 0, 0);
+ 			  print("we should be getting above ceo");
         }
 	}
 }
