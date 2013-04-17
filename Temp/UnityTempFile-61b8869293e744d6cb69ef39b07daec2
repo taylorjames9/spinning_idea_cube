@@ -35,4 +35,6 @@
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
 -i:UnityEditor
+'Assets/Scripts/closeRod.js'
+'Assets/Scripts/cube_rotate_exact.js'
 'Assets/Scripts/spin_cube_mouseDrag.js'
