@@ -18,6 +18,7 @@ extern "C"
 	extern gpointer*	mono_aot_module_System_Core_info; // System.Core.dll
 	extern gpointer*	mono_aot_module_System_info; // System.dll
 	extern gpointer*	mono_aot_module_UnityEngine_info; // UnityEngine.dll
+	extern gpointer*	mono_aot_module_UnityScript_Lang_info; // UnityScript.Lang.dll
 	extern gpointer*	mono_aot_module_mscorlib_info; // mscorlib.dll
 #endif // !(TARGET_IPHONE_SIMULATOR)
 }
@@ -33,6 +34,7 @@ void RegisterMonoModules()
 	mono_aot_register_module(mono_aot_module_System_Core_info);
 	mono_aot_register_module(mono_aot_module_System_info);
 	mono_aot_register_module(mono_aot_module_UnityEngine_info);
+	mono_aot_register_module(mono_aot_module_UnityScript_Lang_info);
 	mono_aot_register_module(mono_aot_module_mscorlib_info);
 
 #endif // !(TARGET_IPHONE_SIMULATOR)
