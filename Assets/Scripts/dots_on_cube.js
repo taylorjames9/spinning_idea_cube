@@ -15,6 +15,8 @@ var distD : float;
 var distE : float;
 var distF : float;
 
+var damping : int  = 5;
+
 var accessThisForLowIndex : dots_on_cube;
 
 var originNode: Transform;
@@ -24,22 +26,23 @@ var lowestIndex: int = 0;
 var rotationSpeed = 1.0;
 var lerpSpeed = 1.0;
  
+var hitRotateBtn: Gui;
+
 private var speed = new Vector3();
 private var avgSpeed = new Vector3();
-private var dragging = false;
+var dragging = false;
 private var targetSpeedX = new Vector3();
+
+var guiSnapOn: Gui;
  
 function OnMouseDown() 
 {
     dragging = true;
 }
 
-
-function Start () {
-
-}
-
 function Update () {
+
+print("transform.rotation = " + transform.rotation);
 
 //Mouse can drag/rotate the cube while holding it down.
  if (Input.GetMouseButton(0) && dragging) {
@@ -88,15 +91,23 @@ function Update () {
         	}
     	}
     
-    print("lowestIndex = " + lowestIndex);
+    //print("lowestIndex = " + lowestIndex);
 
 //The snapTo function provides the instructions for how to rotate the cube depending on the index value of the array that is closest to origin
-    SnapTo();
+    
+    
+    if(guiSnapOn.snapOn){
+    	SnapTo();
+	}
 }
 
 
 function SnapTo()
 {
+
+
+	var t = 0.5;
+	
 	if(dragging == false)
 	{
 		var lowestIndexforSwitch = accessThisForLowIndex.lowestIndex; 
@@ -104,33 +115,35 @@ function SnapTo()
 	    switch(lowestIndexforSwitch){
     	
     	case 0: 
+    	
+    		//transform.position = Vector3.Lerp(transform.position, Vector3(0, 0, 0), t);
     		transform.eulerAngles = Vector3(0, 0, 0);
-    		print("Snap Forward: CEO");
+    		//print("Snap Forward: CEO");
     	break; 
     	
     	case 1:
     		transform.eulerAngles = Vector3(0, 0, 180);
-    		print("Snap Back: Game Designer");
+    		//print("Snap Back: Game Designer");
     	break;
     	
     	case 2:
     		transform.eulerAngles = Vector3(0, 0, 270);
-    		print("Snap Up: CTO");
+    		//print("Snap Up: CTO");
     	break;
     	
     	case 3:
     		transform.eulerAngles = Vector3(0, 0, 90);
-    		print("Snap down: Legal");
+    		//print("Snap down: Legal");
     	break;
     	
     	case 4:
     		transform.eulerAngles = Vector3(0, 90, 0);
-    		print("Snap Right: Art Director");
+    		//print("Snap Right: Art Director");
     	break;
     	    	
     	case 5:
     		transform.eulerAngles = Vector3(0, 270, 0);
-    		print("Snap left: Marketing");
+    		//print("Snap left: Marketing");
     	break;
     	
     	}

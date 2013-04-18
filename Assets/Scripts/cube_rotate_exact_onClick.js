@@ -2,8 +2,6 @@
 var rotating : boolean = false;
 var rotateSpeed : int = 100;
 
- 
-
 function OnMouseDown()
 
 {
