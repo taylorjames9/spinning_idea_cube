@@ -1,18 +1,17 @@
 
 
+
+var myStyle	: GUIStyle;
+
 var snapBtn : Texture;
 var noSnapBtn : Texture;
 var rotateBtn: Texture;
-
 
 var snapOn: boolean = false;
 var tellCubeRotate: boolean = false;
 var buttonUp: boolean = true;
 
 //var myGUI = new GUIStyle;
-
-
-
 var mainCube: Transform;
 
 var cubeRotateCounter: int = 0;
@@ -24,16 +23,15 @@ function Start () {
 
 }
 
-
 function OnGUI ()
 
 {
-        if (GUI.Button(Rect(20,10,80,80),snapBtn)){
+        if (GUI.Button(Rect(20,15,80,80),snapBtn)){
             snapOn = true;
             //print("snapping is on");
         }
             
-        if (GUI.Button(Rect(120,10,80,80),noSnapBtn)){
+        if (GUI.Button(Rect(20,100,80,80),noSnapBtn)){
 			snapOn = false;
 			//print("snapping is off");
 			}
@@ -49,4 +47,18 @@ function OnGUI ()
             }   
         }
      }
+}
+
+
+// Makes this button go back in depth over the example2 class one.
+
+class GuiRecede2 extends MonoBehaviour {
+    static var guiDepth : int = 1;
+    function OnGUI() {
+        GUI.depth = guiDepth;
+        if (GUI.Button(Rect(10,Screen.height-90,150,90), whistle, myStyle)) {
+            guiDepth = 1;
+            GuiRecede1.guiDepth = 0;
+        }
+    }
 }

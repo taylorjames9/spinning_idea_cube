@@ -34,6 +34,12 @@ var dragging = false;
 private var targetSpeedX = new Vector3();
 
 var guiSnapOn: Gui;
+
+
+var doubleClickTime = 0.5;
+var clicked = false;
+var lastClickTime = 0.0;
+var doubleclickCounter: int = 0;
  
 function OnMouseDown() 
 {
@@ -42,15 +48,17 @@ function OnMouseDown()
 
 function Update () {
 
+doubleClick();
+
 //print("transform.rotation = " + transform.rotation);
 
 //Mouse can drag/rotate the cube while holding it down.
  if (Input.GetMouseButton(0) && dragging) {
         speed = new Vector3(-Input.GetAxis ("Mouse X"), Input.GetAxis("Mouse Y"), 0);
-        avgSpeed = Vector3.Lerp(avgSpeed,speed, Time.deltaTime);
+        avgSpeed = Vector3.Lerp(avgSpeed,speed*5, Time.deltaTime);
     } else {
         if (dragging) {
-            speed = Vector3(0,0,0);
+            speed = avgSpeed;
             dragging = false;
         }
         var k = Time.deltaTime * lerpSpeed;
@@ -84,7 +92,7 @@ function Update () {
 
 //This for loop finds the array index of the node that is closest to the origin.
         for (var  i=0;  i< arrayofDistances.length; i++) {
-        	if (arrayofDistances[i] < lowestVal) 
+        	if (arrayofDistances[i] <= lowestVal) 
         	{
             	lowestVal = arrayofDistances[i];
             	lowestIndex = i;
@@ -95,8 +103,7 @@ function Update () {
 
 //The snapTo function provides the instructions for how to rotate the cube depending 
 //on the index value of the array that is closest to origin
-    
-    
+   
     if(guiSnapOn.snapOn){
     	SnapTo();
 	}
@@ -149,4 +156,49 @@ function SnapTo()
     	
     	}
 	}
+}
+
+function doubleClick() {
+
+  if (Input.GetMouseButtonDown(0))
+    {
+    print("inside of mouseClick IF");
+        if(clicked)
+        {          
+            if ((Time.time - lastClickTime) > 0.5)
+            {
+				print("too long");
+                 //too long, so set this as a first click
+                 clicked = true;
+                 lastClickTime = Time.time;
+            }
+            else if(doubleclickCounter%2==0)
+            {
+				transform.localScale.x *= 1.7;
+				transform.localScale.y *= 1.7;
+				transform.localScale.z *= 1.7;
+				print("Double click");
+                 //it was a double click!
+                 clicked = false;
+                 lastClickTime = 0.0;
+                 doubleclickCounter++;
+            }
+            else if(doubleclickCounter%2==1)
+            {
+				transform.localScale.x *= 0.58823529;
+				transform.localScale.y *= 0.58823529;
+				transform.localScale.z *= 0.58823529;
+				print("Double click");
+                 //it was a double click!
+                 clicked = false;
+                 lastClickTime = 0.0;
+                 doubleclickCounter++;
+            }
+        }
+        else
+        {
+            clicked = true;
+            lastClickTime = Time.time;
+        }
+    }
 }
