@@ -9,6 +9,8 @@ var snapOn: boolean = false;
 var tellCubeRotate: boolean = false;
 var buttonUp: boolean = true;
 
+//var myGUI = new GUIStyle;
+
 
 
 var mainCube: Transform;
@@ -18,7 +20,7 @@ var cubeRotateCounter: int = 0;
 
 function Start () {
 
-tellCubeRotate = false;
+	tellCubeRotate = false;
 
 }
 
@@ -26,21 +28,19 @@ tellCubeRotate = false;
 function OnGUI ()
 
 {
-        if (GUI.Button(Rect(20,10,40,40),snapBtn)){
+        if (GUI.Button(Rect(20,10,80,80),snapBtn)){
             snapOn = true;
             //print("snapping is on");
-            
-           
         }
             
-        if (GUI.Button(Rect(70,10,40,40),noSnapBtn)){
+        if (GUI.Button(Rect(120,10,80,80),noSnapBtn)){
 			snapOn = false;
 			//print("snapping is off");
 			}
 			
 		if(snapOn){
-				print("Rotate Bttn Should now be visible");
-				if(GUI.Button(Rect(Screen.width-70, Screen.height-70,50,50),rotateBtn)){
+				//print("Rotate Bttn Should now be visible");
+				if(GUI.Button(Rect(Screen.width-120, Screen.height-120,90,90),rotateBtn)){
 						//cubeRotate = true;
 						cubeRotateCounter++;
 						if(cubeRotateCounter%2==1){ 

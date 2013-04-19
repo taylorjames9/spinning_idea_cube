@@ -42,19 +42,19 @@ function OnMouseDown()
 
 function Update () {
 
-print("transform.rotation = " + transform.rotation);
+//print("transform.rotation = " + transform.rotation);
 
 //Mouse can drag/rotate the cube while holding it down.
  if (Input.GetMouseButton(0) && dragging) {
         speed = new Vector3(-Input.GetAxis ("Mouse X"), Input.GetAxis("Mouse Y"), 0);
-        avgSpeed = Vector3.Lerp(avgSpeed,speed,Time.deltaTime);
+        avgSpeed = Vector3.Lerp(avgSpeed,speed, Time.deltaTime);
     } else {
         if (dragging) {
             speed = Vector3(0,0,0);
             dragging = false;
         }
-        var i = Time.deltaTime/2 * lerpSpeed;
-        speed = Vector3.Lerp( speed, Vector3.zero, i);   
+        var k = Time.deltaTime * lerpSpeed;
+        speed = Vector3.Lerp( speed, Vector3.zero, k);   
     }
  
     transform.Rotate( Camera.main.transform.up * speed.x * rotationSpeed, Space.World );
@@ -79,21 +79,22 @@ print("transform.rotation = " + transform.rotation);
         arrayofDistances[3] = distD;
         arrayofDistances[4] = distE;
         arrayofDistances[5] = distF;
+        
         var lowestVal = arrayofDistances[0];
 
 //This for loop finds the array index of the node that is closest to the origin.
-        for (var j = 0; j < arrayofDistances.length; j++) {
-        	if (arrayofDistances[j] < lowestVal) 
+        for (var  i=0;  i< arrayofDistances.length; i++) {
+        	if (arrayofDistances[i] < lowestVal) 
         	{
-            	lowestVal = arrayofDistances[j];
-            	lowestIndex = j;
-            	
+            	lowestVal = arrayofDistances[i];
+            	lowestIndex = i;
         	}
     	}
     
-    //print("lowestIndex = " + lowestIndex);
+    print("lowestIndex = " + lowestIndex);
 
-//The snapTo function provides the instructions for how to rotate the cube depending on the index value of the array that is closest to origin
+//The snapTo function provides the instructions for how to rotate the cube depending 
+//on the index value of the array that is closest to origin
     
     
     if(guiSnapOn.snapOn){

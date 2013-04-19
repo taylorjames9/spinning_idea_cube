@@ -48,7 +48,13 @@
      <Compile Include="Assets\Scripts\closeRod.js" />
      <Compile Include="Assets\Scripts\cube_rotate_exact_onClick.js" />
      <Compile Include="Assets\Scripts\dots_on_cube.js" />
-     <Compile Include="Assets\Scripts\rotatePlane90.js" />
+     <Compile Include="Assets\Scripts\rotatePlane.js" />
+     <Compile Include="Assets\Scripts\rotatePlane_art.js" />
+     <Compile Include="Assets\Scripts\rotatePlane_ceo.js" />
+     <Compile Include="Assets\Scripts\rotatePlane_cto.js" />
+     <Compile Include="Assets\Scripts\rotatePlane_gamedesign.js" />
+     <Compile Include="Assets\Scripts\rotatePlane_legal.js" />
+     <Compile Include="Assets\Scripts\rotatePlane_marketing.js" />
      <Compile Include="Assets\Scripts\spin_cube_mouseDrag.js" />
      <Compile Include="Assets\Scripts\swipe+90Deg.js" />
   </ItemGroup>
