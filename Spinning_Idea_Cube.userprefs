@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/dots_on_cube.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gui.js">
     <Files>
-      <File FileName="Assets/Scripts/dots_on_cube.js" Line="45" Column="16" />
+      <File FileName="Assets/Scripts/dots_on_cube.js" Line="18" Column="24" />
+      <File FileName="Assets/Scripts/Gui.js" Line="38" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

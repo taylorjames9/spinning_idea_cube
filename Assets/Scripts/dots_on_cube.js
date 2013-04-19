@@ -99,7 +99,7 @@ doubleClick();
         	}
     	}
     
-    print("lowestIndex = " + lowestIndex);
+    //print("lowestIndex = " + lowestIndex);
 
 //The snapTo function provides the instructions for how to rotate the cube depending 
 //on the index value of the array that is closest to origin
@@ -162,12 +162,12 @@ function doubleClick() {
 
   if (Input.GetMouseButtonDown(0))
     {
-    print("inside of mouseClick IF");
+    //print("inside of mouseClick IF");
         if(clicked)
         {          
-            if ((Time.time - lastClickTime) > 0.5)
+            if ((Time.time - lastClickTime) > 0.3)
             {
-				print("too long");
+				//print("too long");
                  //too long, so set this as a first click
                  clicked = true;
                  lastClickTime = Time.time;
@@ -177,7 +177,7 @@ function doubleClick() {
 				transform.localScale.x *= 1.7;
 				transform.localScale.y *= 1.7;
 				transform.localScale.z *= 1.7;
-				print("Double click");
+				//print("Double click");
                  //it was a double click!
                  clicked = false;
                  lastClickTime = 0.0;
@@ -188,7 +188,7 @@ function doubleClick() {
 				transform.localScale.x *= 0.58823529;
 				transform.localScale.y *= 0.58823529;
 				transform.localScale.z *= 0.58823529;
-				print("Double click");
+				//print("Double click");
                  //it was a double click!
                  clicked = false;
                  lastClickTime = 0.0;
