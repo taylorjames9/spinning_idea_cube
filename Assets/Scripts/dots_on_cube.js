@@ -16,11 +16,8 @@ var distE : float;
 var distF : float;
 
 var damping : int  = 5;
-
 var accessThisForLowIndex : dots_on_cube;
-
 var originNode: Transform;
-
 var lowestIndex: int = 0;
 
 var rotationSpeed = 1.0;
@@ -31,19 +28,38 @@ var hitRotateBtn: Gui;
 private var speed = new Vector3();
 private var avgSpeed = new Vector3();
 var dragging = false;
+var soundDragging = false;
 private var targetSpeedX = new Vector3();
 
 var guiSnapOn: Gui;
-
 
 var doubleClickTime = 0.5;
 var clicked = false;
 var lastClickTime = 0.0;
 var doubleclickCounter: int = 0;
+
+var dragTimer: float = 0;
+
+var cubeTurn : AudioSource;
  
 function OnMouseDown() 
 {
     dragging = true;
+    //cubeTurn.Play();
+    //soundDragging = true;
+    dragTimer = Time.time;
+}
+
+function OnMouseUp (){
+
+if(dragTimer > 1){
+
+cubeTurn.Play();
+dragTimer = 0;
+
+}
+
+
 }
 
 function Update () {
@@ -109,6 +125,13 @@ doubleClick();
 	}
 }
 
+var speedRot:float = 0.5;
+var cube0: Transform;
+var cube1: Transform;
+var cube2: Transform;
+var cube3: Transform;
+var cube4: Transform;
+var cube5: Transform;
 
 function SnapTo()
 {
@@ -119,39 +142,58 @@ function SnapTo()
 	if(dragging == false)
 	{
 		var lowestIndexforSwitch = accessThisForLowIndex.lowestIndex; 
-	
+		
 	    switch(lowestIndexforSwitch){
     	
     	case 0: 
-    	
-    		//transform.position = Vector3.Lerp(transform.position, Vector3(0, 0, 0), t);
-    		transform.eulerAngles = Vector3(0, 0, 0);
+      		transform.rotation = Quaternion.Lerp(transform.rotation, cube0.rotation, Time.deltaTime * speedRot);
+    		print("t speed of snap = " + speedRot);
+    		//if(soundDragging){
+    		//cubeTurn.Play();
+    		//cubeTurn.PlayDelayed(1);
+    		 //cubeTurn.PlayOneShot(cubeTurn, 0.7);
+    		//}
     		//print("Snap Forward: CEO");
     	break; 
     	
     	case 1:
-    		transform.eulerAngles = Vector3(0, 0, 180);
+    		transform.rotation = Quaternion.Lerp(transform.rotation, cube1.rotation, Time.deltaTime * speedRot);
     		//print("Snap Back: Game Designer");
+    		//if(soundDragging){
+    		//cubeTurn.Play();
+    		//}
     	break;
     	
     	case 2:
-    		transform.eulerAngles = Vector3(0, 0, 270);
+    		transform.rotation = Quaternion.Lerp(transform.rotation, cube2.rotation, Time.deltaTime * speedRot);
     		//print("Snap Up: CTO");
+    		//if(soundDragging){
+    		//cubeTurn.Play();
+    		//}
     	break;
     	
     	case 3:
-    		transform.eulerAngles = Vector3(0, 0, 90);
+    		transform.rotation = Quaternion.Lerp(transform.rotation, cube3.rotation, Time.deltaTime * speedRot);
     		//print("Snap down: Legal");
+    		//if(soundDragging){
+    		//cubeTurn.Play();
+    		//}
     	break;
     	
     	case 4:
-    		transform.eulerAngles = Vector3(0, 90, 0);
+    		transform.rotation = Quaternion.Lerp(transform.rotation, cube4.rotation, Time.deltaTime * speedRot);
     		//print("Snap Right: Art Director");
+    		//if(soundDragging){
+    		//cubeTurn.Play();
+    		//}
     	break;
     	    	
     	case 5:
-    		transform.eulerAngles = Vector3(0, 270, 0);
+    		transform.rotation = Quaternion.Lerp(transform.rotation, cube5.rotation, Time.deltaTime * speedRot);
     		//print("Snap left: Marketing");
+    		//if(soundDragging){
+    		//cubeTurn.Play();
+    		//}
     	break;
     	
     	}
@@ -162,6 +204,7 @@ function doubleClick() {
 
   if (Input.GetMouseButtonDown(0))
     {
+    //cubeTurn.Play();
     //print("inside of mouseClick IF");
         if(clicked)
         {          
@@ -171,6 +214,7 @@ function doubleClick() {
                  //too long, so set this as a first click
                  clicked = true;
                  lastClickTime = Time.time;
+                 //cubeTurn.Play();
             }
             else if(doubleclickCounter%2==0)
             {
@@ -188,6 +232,7 @@ function doubleClick() {
 				transform.localScale.x *= 0.58823529;
 				transform.localScale.y *= 0.58823529;
 				transform.localScale.z *= 0.58823529;
+				//cubeTurn.Play();
 				//print("Double click");
                  //it was a double click!
                  clicked = false;

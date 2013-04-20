@@ -19,6 +19,7 @@ var cubeRotateCounter: int = 0;
 var myStyle	: GUIStyle;
 var guiScript2: Gui2;
 var showbtn1 :boolean = true;
+var drip1 : AudioSource;
 
 function Start () {
 	tellCubeRotate = false;
@@ -31,6 +32,7 @@ class Gui extends MonoBehaviour {
  	GUI.depth = guiDepth;
 		if(showbtn1){
         if (GUI.Button(Rect(20,15,80,80),snapBtn)){
+        	drip1.Play();
             snapOn = true;
             guiDepth = 1;
             Gui2.guiDepth = 0;
@@ -43,6 +45,7 @@ class Gui extends MonoBehaviour {
 		if(snapOn){
 				//print("Rotate Bttn Should now be visible");
 				if(GUI.Button(Rect(Screen.width-120, Screen.height-120,90,90),rotateBtn)){
+						drip1.Play();
 						cubeRotateCounter++;
 						if(cubeRotateCounter%2==1){ 
             				tellCubeRotate=true;

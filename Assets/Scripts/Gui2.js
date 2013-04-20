@@ -5,6 +5,7 @@ var guiScript1: Gui;
 var myStyle	: GUIStyle;
 var noSnapBtn : Texture;
 var showbtn2 :boolean = false;
+var drip2 : AudioSource;
 
 class Gui2 extends MonoBehaviour {
 	static var guiDepth : int = 1;
@@ -13,6 +14,7 @@ class Gui2 extends MonoBehaviour {
  		
  		if(showbtn2){
 		if (GUI.Button(Rect(20,15,80,80),noSnapBtn)){
+		drip2.Play();
 	    guiScript1.snapOn = false;
         guiDepth = 1;
         Gui.guiDepth = 0;
