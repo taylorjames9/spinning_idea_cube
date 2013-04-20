@@ -16,25 +16,28 @@ var cubeRotateCounter: int = 0;
 
 
 //var thisGuiScript: Gui;
-
 var myStyle	: GUIStyle;
 var guiScript2: Gui2;
+var showbtn1 :boolean = true;
 
 function Start () {
 	tellCubeRotate = false;
 }
 
 class Gui extends MonoBehaviour {
-static var guiDepth : int = 0;
-function OnGUI (){
+	static var guiDepth : int = 0;
+	function OnGUI (){
 
- GUI.depth = guiDepth;
-
+ 	GUI.depth = guiDepth;
+		if(showbtn1){
         if (GUI.Button(Rect(20,15,80,80),snapBtn)){
             snapOn = true;
             guiDepth = 1;
             Gui2.guiDepth = 0;
+            guiScript2.showbtn2 = true;
             print("hit gui depth on GUI");
+            showbtn1 = false;
+        }
         }
            		
 		if(snapOn){
@@ -46,29 +49,11 @@ function OnGUI (){
             				cubeRotateCounter++;
            }   
        }
-    }
+    
 }
 }
-
-/*
-class GuiRecede1 extends MonoBehaviour {
-    static var guiDepth : int = 0;
-    function OnGUI() {
-        GUI.depth = guiDepth;
-
-        if (GUI.Button(Rect(10,Screen.height-90,150,90), gun, myStyle)) {
-
-            guiDepth = 1;
-
-            GuiRecede2.guiDepth = 0;
-
-        }
-
-    }
-
 }
 
 
 
-*/
 

@@ -165,7 +165,7 @@ function doubleClick() {
     //print("inside of mouseClick IF");
         if(clicked)
         {          
-            if ((Time.time - lastClickTime) > 0.3)
+            if ((Time.time - lastClickTime) > 0.2)
             {
 				//print("too long");
                  //too long, so set this as a first click
