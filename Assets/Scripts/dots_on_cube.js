@@ -147,7 +147,7 @@ function SnapTo()
     	
     	case 0: 
       		transform.rotation = Quaternion.Lerp(transform.rotation, cube0.rotation, Time.deltaTime * speedRot);
-    		print("t speed of snap = " + speedRot);
+    		//print("t speed of snap = " + speedRot);
     		//if(soundDragging){
     		//cubeTurn.Play();
     		//cubeTurn.PlayDelayed(1);

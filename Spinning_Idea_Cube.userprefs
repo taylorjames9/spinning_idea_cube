@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/inputText.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../standoff_master0/Scripts/player.js">
     <Files>
-      <File FileName="Assets/Scripts/dots_on_cube.js" Line="195" Column="9" />
-      <File FileName="Assets/Scripts/Gui.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Gui2.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/inputText.js" Line="8" Column="50" />
+      <File FileName="../standoff_master0/Scripts/player.js" Line="163" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

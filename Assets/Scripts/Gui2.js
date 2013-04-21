@@ -16,9 +16,9 @@ class Gui2 extends MonoBehaviour {
 		if (GUI.Button(Rect(20,15,80,80),noSnapBtn)){
 		drip2.Play();
 	    guiScript1.snapOn = false;
-        guiDepth = 1;
-        Gui.guiDepth = 0;
-        print("hit gui depth on GUI2");
+        guiDepth = 6;
+        Gui.guiDepth = 5;
+        //print("hit gui depth on GUI2");
         guiScript1.showbtn1 = true;
         showbtn2 = false;
 		}

@@ -34,10 +34,10 @@ class Gui extends MonoBehaviour {
         if (GUI.Button(Rect(20,15,80,80),snapBtn)){
         	drip1.Play();
             snapOn = true;
-            guiDepth = 1;
-            Gui2.guiDepth = 0;
+            guiDepth = 6;
+            Gui2.guiDepth = 5;
             guiScript2.showbtn2 = true;
-            print("hit gui depth on GUI");
+            //print("hit gui depth on GUI");
             showbtn1 = false;
         }
         }
