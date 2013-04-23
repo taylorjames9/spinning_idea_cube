@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\cube_rotate_exact_onClick.js" />
      <Compile Include="Assets\Scripts\dots_on_cube.js" />
      <Compile Include="Assets\Scripts\guiOther.js" />
+     <Compile Include="Assets\Scripts\hasWriting.js" />
      <Compile Include="Assets\Scripts\rotatePlane.js" />
      <Compile Include="Assets\Scripts\rotatePlane_art.js" />
      <Compile Include="Assets\Scripts\rotatePlane_ceo.js" />
