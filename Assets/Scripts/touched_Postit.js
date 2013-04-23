@@ -6,6 +6,9 @@
 
 var inputTextScreen: Write_On_PostIt;
 var cube: dots_on_cube;
+var scribbleText : Texture;
+var writtenUpon: boolean = false;
+var regularYel: Texture;
 
 
 function Start () {
@@ -30,6 +33,17 @@ if (Input.GetMouseButtonDown(0) && cube.doubleclickCounter%2==1) {
                     print("hit.collider.gameObject.name =" + hit.collider.gameObject.name);
                  
             }   
-    }
+    	}
 }
+
+
+if(writtenUpon){
+	  
+    renderer.material.SetTexture("_MainTex", scribbleText);
+
+}
+else if(!writtenUpon){
+	renderer.material.SetTexture("_MainTex", regularYel);
+}
+
 }
