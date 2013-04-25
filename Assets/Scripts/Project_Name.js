@@ -8,8 +8,10 @@ var myStyle: GUIStyle;
 
 function Start (){
   
-  	myStyle.normal.textColor = Color.white;
+  	myStyle.normal.textColor = Color.gray;
   	title = "Name";
+  	stringToEdit2 = "Project Name";
+  	PlayerPrefs.SetString("Name", stringToEdit2);
   }
       
 class Project_Name extends MonoBehaviour {
