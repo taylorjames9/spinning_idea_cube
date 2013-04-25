@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Project_Name.js" />
      <Compile Include="Assets\Scripts\Write_On_PostIt.js" />
      <Compile Include="Assets\Scripts\art_postit_1.js" />
+     <Compile Include="Assets\Scripts\clear_all.js" />
      <Compile Include="Assets\Scripts\closeRod.js" />
      <Compile Include="Assets\Scripts\closeX.js" />
      <Compile Include="Assets\Scripts\cube_rotate_exact_onClick.js" />
