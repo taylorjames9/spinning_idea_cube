@@ -5,7 +5,8 @@ var clearStyle: GUIStyle;
 function OnGUI()
 
 {
- 	if (GUI.Button(Rect(Screen.width-220, 40, 100, 20),"Clear All"), clearStyle){
+	clearStyle.normal.textColor = Color.gray;
+ 	if (GUI.Button(Rect(Screen.width-150, 100, 100, 20),"Clear All", clearStyle)){
 		
 
 }
