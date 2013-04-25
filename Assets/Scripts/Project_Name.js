@@ -17,7 +17,7 @@ function OnGUI(){
 
 	stringToEdit2 = PlayerPrefs.GetString(title);
 	GUI.skin.settings.cursorColor = Color.white;
-	stringToEdit2 = GUI.TextField (Rect (Screen.width-215, 15, 200, 40), stringToEdit2, 30, myStyle);
+	stringToEdit2 = GUI.TextField (Rect (Screen.width-215, 30, 200, 40), stringToEdit2, 20, myStyle);
 	PlayerPrefs.SetString(title, stringToEdit2);
 }
 
