@@ -27,6 +27,8 @@ if (Input.GetMouseButtonDown(0) && cube.doubleclickCounter%2==1) {
                     inputTextScreen.this_post_it = hit.collider.gameObject.name;
                     inputTextScreen.myPostit = hit.collider.gameObject.tag;
                     
+                    print("gameObject.tag: " +inputTextScreen.myPostit);
+                    
                     //print("hit.collider.gameObject.name =" + hit.collider.gameObject.name);               
             }         //print("inputTextScreen.myPostit = " + inputTextScreen.myPostit);                                                                                                
     }

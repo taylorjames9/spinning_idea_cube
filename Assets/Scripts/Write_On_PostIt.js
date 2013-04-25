@@ -12,7 +12,7 @@ var close: closeX;
 var writtenUpon: boolean = false;
 
 function Start(){
-	this_post_it = "art";
+	this_post_it = "art_ui";
 	myPostit = "postit";
 }
 
