@@ -46,6 +46,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Gui.js" />
      <Compile Include="Assets\Scripts\Gui2.js" />
+     <Compile Include="Assets\Scripts\MyNameGUI.js" />
+     <Compile Include="Assets\Scripts\Project_Name.js" />
      <Compile Include="Assets\Scripts\Write_On_PostIt.js" />
      <Compile Include="Assets\Scripts\art_postit_1.js" />
      <Compile Include="Assets\Scripts\closeRod.js" />
